@@ -1,0 +1,124 @@
+
+.chat-content{
+  float: right;
+  width: calc(100vw - 300px);
+  height: calc(100% - 30px);
+  &__header{
+    background-color: #fff;
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  &__left-header{
+      float: left;
+  }
+  &__left-header-title{
+      margin-top: 35px;
+      font-size: 20px;
+      color: #333333;
+      font-weight: bold;
+  }
+  &__members{
+    font-size: 12px;
+    color: #999999;
+    margin-top: 15px;
+    li{
+      display: inline-block;
+    }
+  }
+  &__right-header{
+    float: right;
+    margin-top: 28px;
+    line-height:  40px;
+    padding: 0 20px;
+    border: 1px solid $color-blue;
+  }
+  &__button{
+    text-decoration: none;
+    color: $color-blue;
+  }
+  &__main{
+    background-color: #AAAAAA;
+    height: calc(100% - 100px - 90px);
+  }
+  &__message{
+    padding: 0 40px 40px;
+  }
+  &__message--top{
+    padding-top: 46px;
+  }
+  &__member-name{
+    display: inline-block;
+    font-size: 16px;
+    color: #434A54;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  &__date{
+    display: inline-block;
+    font-size: 12px;
+    color: #999999;
+  }
+  &__message-main{
+    font-size: 14px;
+    color: #434A54;
+  }
+  &__form-content{
+    background-color: #DDDDDD;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+  }
+  &__form-message{
+    height: 50px;
+    width: calc(100% - 150px);
+    padding: 0 10px;
+    border: none;
+    display:inline-block;
+  }
+  &__form-image{
+    padding-right: 10px;
+    display: inline-block;
+    height: 50px;
+    background-color: #fff;
+    width: 30px;
+    vertical-align: top;
+    position: relative;
+  }
+  &__image{
+    position:absolute;
+    top: 50%;
+    margin-top: -10px;
+    i{
+      color: black;
+      font-size: 20px;
+    }
+    #filesend{
+      display:none;
+    }
+  }
+  &__form-submit{
+    background-color: $color-blue;
+    color: #fff;
+    margin-left: 15px;
+    height: 50px;
+    text-align: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    float:right;
+  }
+
+ }
+
+
+
+
+
+
+
+
+
+
+
