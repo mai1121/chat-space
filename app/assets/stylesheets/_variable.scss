@@ -1,0 +1,51 @@
+// 変数定義用のファイル
+$color-blue: #38AEF0;
+$color-white: #FFFFFF;
+@mixin member-name{
+  display: inline-block;
+  font-size: 16px;
+  color: #434A54;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+@mixin form-content{
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+@mixin form-message{
+  height: 50px;
+  width: calc(100% - 150px);
+  padding: 0 10px;
+  border: none;
+  display:inline-block;
+}
+
+@mixin form-image{
+  padding-right: 10px;
+  display: inline-block;
+  height: 50px;
+  background-color: #fff;
+  width: 30px;
+  vertical-align: top;
+  position: relative;
+}
+
+@mixin form-submit{
+  background-color: $color-blue;
+  color: #fff;
+  margin-left: 15px;
+  height: 50px;
+  text-align: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+  float:right;
+}
+
+
+
+
