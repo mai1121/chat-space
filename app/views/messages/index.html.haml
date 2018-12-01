@@ -5,10 +5,10 @@
     %ul.side-bar__header-lists
       %li.side-bar__list
         %a(href="" class="side-bar__edit")
-          %i.fa.fa-pencil-square-o
+          =fa_icon "pencil-square-o"
       %li.side-bar__list
         %a(href="" class="side-bar__cog")
-          %i.fa.fa-cog
+          =fa_icon "cog"
 
   .side-bar__groups
     .side-bar__group
@@ -45,6 +45,6 @@
     %input(type="text" name="" class="chat-content__form-message" placeholder="type a message")
     .chat-content__form-image
       %label.chat-content__image
-        %i(class="fa fa-picture-o icon")
+        =fa_icon "picture-o icon"
         %input(type="file" name="form-image" id="filesend")
     %input(type="submit" value="Send" class="chat-content__form-submit")
