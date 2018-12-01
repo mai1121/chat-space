@@ -49,11 +49,7 @@
     padding-top: 46px;
   }
   &__member-name{
-    display: inline-block;
-    font-size: 16px;
-    color: #434A54;
-    font-weight: bold;
-    padding-right: 10px;
+    @include member-name;
   }
   &__date{
     display: inline-block;
@@ -65,27 +61,13 @@
     color: #434A54;
   }
   &__form-content{
-    background-color: #DDDDDD;
-    height: 90px;
-    padding: 20px 50px 20px 40px;
-    box-sizing: border-box;
-    display: flex;
+    @include form-content
   }
   &__form-message{
-    height: 50px;
-    width: calc(100% - 150px);
-    padding: 0 10px;
-    border: none;
-    display:inline-block;
+    @include form-message
   }
   &__form-image{
-    padding-right: 10px;
-    display: inline-block;
-    height: 50px;
-    background-color: #fff;
-    width: 30px;
-    vertical-align: top;
-    position: relative;
+    @include form-image
   }
   &__image{
     position:absolute;
@@ -100,14 +82,7 @@
     }
   }
   &__form-submit{
-    background-color: $color-blue;
-    color: #fff;
-    margin-left: 15px;
-    height: 50px;
-    text-align: center;
-    padding: 0 30px;
-    box-sizing: border-box;
-    float:right;
+    @include form-submit
   }
 
  }
