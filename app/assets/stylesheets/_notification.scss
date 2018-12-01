@@ -1,0 +1,10 @@
+.notification{
+  background-color: $color-blue;
+  height: 30px;
+  &__notice{
+    color: #fff;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+  }
+}
