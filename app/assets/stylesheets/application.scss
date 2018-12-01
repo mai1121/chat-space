@@ -2,3 +2,13 @@
 @import "./reset";
 /*パーシャルファイル_variable.scssを読み込む*/
 @import "./variable";
+
+@import "./chat-content";
+
+@import "font-awesome";
+
+@import "./notification";
+
+@import "./side-bar";
+
+@import "./main";
