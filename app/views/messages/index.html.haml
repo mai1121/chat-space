@@ -1,0 +1,50 @@
+= render partial: 'notification'
+.side-bar
+  .side-bar__header
+    %h3.side-bar__header-name maiukawa
+    %ul.side-bar__header-lists
+      %li.side-bar__list
+        %a(href="" class="side-bar__edit")
+          %i.fa.fa-pencil-square-o
+      %li.side-bar__list
+        %a(href="" class="side-bar__cog")
+          %i.fa.fa-cog
+
+  .side-bar__groups
+    .side-bar__group
+      %a(href="" class="side-bar__group-link")
+        .side-bar__group-link.side-bar__group-link--name Sampleグループ１
+        .side-bar__group-link--message こんにちは
+    .side-bar__group
+      %a(href="" class="side-bar__group-link")
+        .side-bar__group-link.side-bar__group-link--name Sampleグループ２
+        .side-bar__group-link--message どうも
+
+.chat-content
+  .chat-content__header
+    .chat-content__left-header
+      .chat-content__left-header-title Sampleグループ１
+      %ul.chat-content__members
+        %li.chat-content__member Member :
+        %li.chat-content__member ukawa
+        %li.chat-content__member mai
+    .chat-content__right-header
+      %a(href="" class="chat-content__button") Edit
+  .chat-content__main
+    .chat-content__message.chat-content__message--top
+      .chat-content__message-info
+        .chat-content__member-name ukawa
+        .chat-content__date 2018/12/01 13:14
+      .chat-content__message-main こんにちは
+    .chat-content__message
+      .chat-content__message-info
+        .chat-content__member-name mai
+        .chat-content__date 2018/12/01 15:14
+      .chat-content__message-main 元気
+  .chat-content__form-content
+    %input(type="text" name="" class="chat-content__form-message" placeholder="type a message")
+    .chat-content__form-image
+      %label.chat-content__image
+        %i(class="fa fa-picture-o icon")
+        %input(type="file" name="form-image" id="filesend")
+    %input(type="submit" value="Send" class="chat-content__form-submit")
