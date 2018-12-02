@@ -1,2 +1,3 @@
 .notification
-  %p.notification__notice チャットグループが作成されました
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key
