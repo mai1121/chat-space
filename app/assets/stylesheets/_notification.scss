@@ -1,10 +1,13 @@
-.notification{
-  background-color: $color-blue;
-  height: 30px;
-  &__notice{
-    color: #fff;
-    display: block;
+.notification {
+  .notice {
+    background-color: $light_blue;
+    color: $white;
     text-align: center;
-    line-height: 30px;
+  }
+
+  .alert {
+    background-color: $alert_orange;
+    color: $white;
+    text-align: center;
   }
 }
