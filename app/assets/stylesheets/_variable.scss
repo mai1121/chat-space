@@ -12,6 +12,7 @@ $color-white: #FFFFFF;
 @mixin form-content{
   background-color: #DDDDDD;
   height: 90px;
+  width: 100%;
   padding: 20px 50px 20px 40px;
   box-sizing: border-box;
   display: flex;
@@ -19,10 +20,12 @@ $color-white: #FFFFFF;
 
 @mixin form-message{
   height: 50px;
-  width: calc(100% - 150px);
+  width: 900px;
   padding: 0 10px;
   border: none;
   display:inline-block;
+  box-sizing: border-box;
+  float: left
 }
 
 @mixin form-image{
@@ -30,9 +33,10 @@ $color-white: #FFFFFF;
   display: inline-block;
   height: 50px;
   background-color: #fff;
-  width: 30px;
+  width: 21.44px;
   vertical-align: top;
   position: relative;
+  float: left
 }
 
 @mixin form-submit{
