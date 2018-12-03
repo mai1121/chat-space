@@ -42,9 +42,15 @@
         .chat-content__date 2018/12/01 15:14
       .chat-content__message-main 元気
   .chat-content__form-content
-    %input(type="text" name="" class="chat-content__form-message" placeholder="type a message")
-    .chat-content__form-image
-      %label.chat-content__image
-        =fa_icon "picture-o icon"
-        %input(type="file" name="form-image" id="filesend")
-    %input(type="submit" value="Send" class="chat-content__form-submit")
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chat-content__form-message', placeholder: 'type a message'
+      .chat-content__form-image
+        = f.label :image, class: 'chat-content__image' do
+          =fa_icon "picture-o icon", class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'chat-content__form-submit'
+
+
+
+
+
