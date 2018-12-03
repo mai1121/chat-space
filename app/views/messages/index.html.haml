@@ -28,7 +28,8 @@
         %li.chat-content__member ukawa
         %li.chat-content__member mai
     .chat-content__right-header
-      %a(href="" class="chat-content__button") Edit
+
+      = link_to "Edit", "/groups/1/edit", class: "chat-content__button"
   .chat-content__main
     .chat-content__message.chat-content__message--top
       .chat-content__message-info
