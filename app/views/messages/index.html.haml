@@ -4,11 +4,13 @@
 .chat-content
   .chat-content__header
     .chat-content__left-header
-      .chat-content__left-header-title Sampleグループ１
+      .chat-content__left-header-title
+        =@group.name
       %ul.chat-content__members
         %li.chat-content__member Member :
-        %li.chat-content__member ukawa
-        %li.chat-content__member mai
+        %li.chat-content__member
+        -@members.each do |member|
+          =member.name
     .chat-content__right-header
       = link_to "Edit", "/groups/1/edit", class: "chat-content__button"
 
