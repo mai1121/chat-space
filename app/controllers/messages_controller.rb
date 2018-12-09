@@ -10,13 +10,24 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+      # html形式のレスポンスではapp/views/messages/index.html.hamlが読まれ、json形式の場合は、app/views/products/search.json.jbuilderが読まれる
+      respond_to do |format|
+        # HTMLリクエストの時は{}内を実行
+        format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました' }
+        format.json
+      end
     else
-      @messages = @group.messages.includes(:user)
-      flash.now[:alert] = 'メッセージを入力してください。'
-      render :index
+        @members = @group.users
+        @messages = @group.messages.includes(:user)
+        flash.now[:alert] = 'メッセージを入力してください。'
+        render :index
     end
+
+
+
   end
+
+
 
   private
 
@@ -24,9 +35,11 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
-
   def set_group
     @group = Group.find(params[:group_id])
   end
+
+
+
 
 end
