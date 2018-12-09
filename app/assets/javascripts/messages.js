@@ -1,7 +1,8 @@
 $(document).on('turbolinks:load',function(){
   function buildHTML(message){
-    var html =`<div class="chat-content__message chat-content__message--top">
-                  <div class="chat-content__message-info">
+          var image = message.image ? `<img alt="" src="${message.image}" class="lower-message__image" />` : "";
+          var html =`<div class="chat-content__message chat-content__message--top">
+                     <div class="chat-content__message-info">
                       <div class="chat-content__member-name">
                            ${message.user_name}
                       </div>
@@ -10,7 +11,7 @@ $(document).on('turbolinks:load',function(){
                        </div>
                         <div class="chat-content__message-main">
                            ${message.content}
-                        <img alt="" src="${message.image}" class="lower-message__image" />
+                           ${image}
                         </div>
                     </div>
                 </div>`
@@ -21,10 +22,8 @@ $(document).on('turbolinks:load',function(){
   $('#new_message').on('submit', function(e){
     // デフォルトのイベントを止める
     e.preventDefault();
-    // console.log(this)
     // new_messageセレクタのフォームの情報を送信データとして取得
     var formData = new FormData(this);
-
   // フォーム情報のうち、action属性の値（URL:"/groups/:group_id/messages"）を取得し変数urlに保存
     var url = $(this).attr('action')
     // 非同期通信に必要なオプションを定義
@@ -53,4 +52,3 @@ $(document).on('turbolinks:load',function(){
     })
   });
 });
-
