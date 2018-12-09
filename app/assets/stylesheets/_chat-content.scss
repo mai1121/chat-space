@@ -40,6 +40,7 @@
   &__main{
     background-color: #AAAAAA;
     height: calc(100% - 100px - 90px);
+    overflow: scroll;
   }
   &__message{
     padding: 0 40px 40px;
