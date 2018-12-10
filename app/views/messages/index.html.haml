@@ -12,7 +12,7 @@
         -@members.each do |member|
           =member.name
     .chat-content__right-header
-      = link_to "Edit", "/groups/1/edit", class: "chat-content__button"
+      = link_to "Edit", edit_group_path(params[:group_id]), class: "chat-content__button"
 
   .chat-content__main
     = render @messages

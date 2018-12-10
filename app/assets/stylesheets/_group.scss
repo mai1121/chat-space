@@ -49,14 +49,40 @@
     }
 
     .chat-group-form__field--left {
+      line-height: 50px;
       float: left;
       width: 30%;
       padding-right: 20px;
       padding-left: 20px;
       box-sizing: border-box;
+      .chat-group-user__name{
+        font-weight: bold;
+        float: right;
+      }
+    }
+
+    .chat-group-form__field--upperright {
+      border-bottom: 1px solid black;
+      float: right;
+      width: 70%;
     }
 
     .chat-group-form__field--right {
+      float: right;
+      width: 70%;
+    }
+
+    .chat-group-form__field--user-right{
+      float: right;
+      width: 70%;
+    }
+
+    .chat-group-form__field--user-lists{
+      float: right;
+      width: 70%;
+    }
+
+    .chat-group-form__field--members{
       float: right;
       width: 70%;
     }
@@ -114,4 +140,9 @@
     background-color: #38aef0;
     border: 0;
   }
+  .chat-group-form__field--submit{
+    float: right;
+    width: 70%;
+  }
 }
+
