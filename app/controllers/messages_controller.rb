@@ -5,14 +5,16 @@ class MessagesController < ApplicationController
     @message = Message.new
     @messages = @group.messages.includes(:user)
     @members = @group.users
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      # html形式のレスポンスではapp/views/messages/index.html.hamlが読まれ、json形式の場合は、app/views/products/search.json.jbuilderが読まれる
       respond_to do |format|
-        # HTMLリクエストの時は{}内を実行
         format.html { redirect_to group_messages_path(@group), notice: 'メッセージが送信されました' }
         format.json
       end

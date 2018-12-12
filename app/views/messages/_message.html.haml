@@ -1,4 +1,4 @@
-.chat-content__message.chat-content__message--top
+%div{:class => "chat-content__message chat-content__message--top", "data-message-id" => "#{message.id}"}
   .chat-content__message-info
     .chat-content__member-name
       = message.user.name
@@ -8,3 +8,4 @@
       - if message.content.present?
         = message.content
       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+

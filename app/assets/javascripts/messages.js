@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load',function(){
   function buildHTML(message){
           var image = message.image ? `<img alt="" src="${message.image}" class="lower-message__image" />` : "";
-          var html =`<div class="chat-content__message chat-content__message--top">
+          var html =`<div class="chat-content__message chat-content__message--top" data-message-id="${message.id}">
                      <div class="chat-content__message-info">
                       <div class="chat-content__member-name">
                            ${message.user_name}
@@ -43,4 +43,26 @@ $(document).on('turbolinks:load',function(){
       alert('error');
     })
   });
+
+  setInterval(function(){
+    $.ajax({
+      url: window.location.href,
+      type: "GET",
+      dataType: 'json'
+    })
+    .done(function(data){
+      var displayedId = $(".chat-content__message--top").filter(":last").data("messageId");
+      data.forEach(function(message){
+        if (message.id > displayedId){
+          var html = buildHTML(message);
+          $('.chat-content__main').append(html);
+          $('.chat-content__main').animate({scrollTop: $('.chat-content__main')[0].scrollHeight}, 'slow');
+        }
+      });
+    })
+    .fail(function(){
+      alert('error');
+    })
+  },5000);
+
 });
