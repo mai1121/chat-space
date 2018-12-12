@@ -53,7 +53,6 @@ $(document).on('turbolinks:load',function(){
     .done(function(data){
       var displayedId = $(".chat-content__message--top").filter(":last").data("messageId");
       data.forEach(function(message){
-        console.log(message);
         if (message.id > displayedId){
           var html = buildHTML(message);
           $('.chat-content__main').append(html);
