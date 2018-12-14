@@ -1,6 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
+set :linked_files, %w{ config/secrets.yml }
+
 set :application, "chat-space"
 set :repo_url, "git@github.com:mai1121/chat-space.git"
 
@@ -42,7 +44,7 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-set :linked_files, %w{ config/secrets.yml }
+
 
 
 
