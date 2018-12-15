@@ -44,7 +44,9 @@ $(document).on('turbolinks:load',function(){
     })
   });
 
-  setInterval(function(){
+
+  var interval = setInterval(function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url: window.location.href,
       type: "GET",
@@ -62,7 +64,10 @@ $(document).on('turbolinks:load',function(){
     })
     .fail(function(){
       alert('error');
-    })
+    });
+    }else{
+      clearInterval(interval);
+    }
   },5000);
 
 });
